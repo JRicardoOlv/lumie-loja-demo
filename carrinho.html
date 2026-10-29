@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho | Lumiê</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <a href="index.html">Lumiê</a>
+
+    <nav id="menu-principal" aria-label="Navegação principal">
+      <ul>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="nossa-historia.html">Nossa história</a></li>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a class="carrinho" href="carrinho.html" aria-current="page">Carrinho (0)</a>
+
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+  </header>
+
+  <main id="conteudo">
+
+    <section>
+      <h1>Carrinho</h1>
+
+      <p id="carrinho-vazio" hidden>Seu carrinho está vazio. <a href="loja.html">Ver produtos</a></p>
+
+      <ul id="carrinho-itens"></ul>
+
+      <div id="carrinho-resumo" class="resumo" hidden>
+        <p class="total">Total: <strong id="carrinho-total"></strong></p>
+        <button class="botao" type="button" disabled>Finalizar compra (indisponível na demonstração)</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Lumiê</p>
+
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="nossa-historia.html">Nossa história</a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2026 Lumiê. Projeto fictício de estudo.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato | Lumiê</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <a href="index.html">Lumiê</a>
+
+    <nav id="menu-principal" aria-label="Navegação principal">
+      <ul>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="nossa-historia.html">Nossa história</a></li>
+        <li><a href="contato.html" aria-current="page">Contato</a></li>
+        <li><a href="diario.html">Diário</a></li>
+      </ul>
+    </nav>
+
+    <a class="carrinho" href="carrinho.html">Carrinho (0)</a>
+
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+  </header>
+
+  <main id="conteudo">
+
+  <section>
+    <h1>Contato</h1>
+    <p class="destaque">Dúvidas, sugestões ou parcerias? Escreva para nós.</p>
+
+    <form id="form-contato" class="contato-form" action="#" method="post">
+
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" autocomplete="name" required>
+      </div>
+
+      <div class="campo">
+        <label for="email-contato">E-mail</label>
+        <input type="email" id="email-contato" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="campo">
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto" required>
+          <option value="">Escolha um assunto</option>
+          <option value="duvida">Dúvida sobre produtos</option>
+          <option value="pedido">Meu pedido</option>
+          <option value="sugestao">Sugestão</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="mensagem-contato">Mensagem</label>
+        <textarea id="mensagem-contato" name="mensagem" rows="6" required></textarea>
+      </div>
+
+      <div class="campo-check">
+        <input type="checkbox" id="consentimento" name="consentimento" required>
+        <label for="consentimento">Concordo em ser contatado(a) sobre esta mensagem.</label>
+      </div>
+
+      <button class="botao" type="submit">Enviar mensagem</button>
+      <p id="contato-aviso" role="status"></p>
+
+    </form>
+  </section>
+
+</main>
+
+  <footer>
+    <p>Lumiê</p>
+
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="nossa-historia.html">Nossa história</a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2026 Lumiê. Projeto fictício de estudo.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto | Lumiê</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilo.css">
+  <script src="js/produtos.js" defer></script>
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <a href="index.html">Lumiê</a>
+
+    <nav id="menu-principal" aria-label="Navegação principal">
+      <ul>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="nossa-historia.html">Nossa história</a></li>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+
+    <a class="carrinho" href="carrinho.html">Carrinho (0)</a>
+
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+  </header>
+
+  <main id="conteudo">
+
+    <section id="produto-detalhe" class="produto-detalhe" hidden>
+      <div id="produto-midia"></div>
+
+      <div>
+        <h1 id="produto-nome"></h1>
+        <p id="produto-descricao"></p>
+        <p id="produto-preco" class="preco"></p>
+
+        <fieldset id="produto-tons">
+          <legend>Tom: <span id="tom-escolhido"></span></legend>
+          <div id="tons-lista" class="tons"></div>
+        </fieldset>
+
+        <button id="adicionar" class="botao" type="button">Adicionar ao carrinho</button>
+        <p id="produto-aviso" role="status"></p>
+      </div>
+    </section>
+
+    <section id="produto-nao-encontrado" hidden>
+      <h1>Produto não encontrado</h1>
+      <p><a href="loja.html">Voltar à loja</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Lumiê</p>
+
+    <nav aria-label="Rodapé">
+      <ul>
+        <li><a href="diario.html">Diário</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="loja.html">Loja</a></li>
+        <li><a href="nossa-historia.html">Nossa história</a></li>
+      </ul>
+    </nav>
+
+    <p>&copy; 2026 Lumiê. Projeto fictício de estudo.</p>
+  </footer>
+
+</body>
+</html>

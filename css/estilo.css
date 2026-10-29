@@ -1,0 +1,629 @@
+/* 1. Variáveis: as cores e fontes do site ficam num só lugar */
+:root {
+  --cor-fundo: #f3e9e4;
+  --cor-texto: #3a2f2c;
+  --cor-destaque: #c98b8b;
+  --fonte-titulo: Georgia, "Times New Roman", serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* 2. Regra básica de medidas */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 3. Página inteira */
+body {
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-texto);
+  line-height: 1.6;
+}
+
+/* 4. Títulos */
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* 5. Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cor-destaque);
+}
+
+/* 6. Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+}
+
+/* 7. Listas de navegação */
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 8. Conteúdo principal */
+section {
+  padding: 4rem 2rem;
+}
+
+/* 9. Hero */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 4rem 2rem;
+  color: #fff;
+  background-color: #8a6f68;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("../img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+}
+
+/* 10. Botão */
+.botao {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border: 1px solid currentColor;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: var(--cor-destaque);
+  border-color: var(--cor-destaque);
+  color: #fff;
+}
+
+/* 11. Cards em grade */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0 0 1rem;
+}
+
+.card a {
+  border-bottom: 1px solid currentColor;
+}
+
+/* 12. Tablet: até 900px de largura */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 13. Celular: até 600px de largura */
+@media (max-width: 600px) {
+  header {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 14. Link "Pular para o conteúdo" (escondido até receber foco) */
+.pular {
+  position: absolute;
+  left: -9999px;
+}
+
+.pular:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+}
+
+/* 15. Texto só para leitores de tela */
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* 16. Diário */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.post img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.post h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.post p {
+  margin: 0 0 1rem;
+}
+
+.post a {
+  border-bottom: 1px solid currentColor;
+}
+
+/* 17. Newsletter */
+.newsletter {
+  text-align: center;
+  background-color: #f1e4de;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.newsletter input {
+  min-width: 18rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--cor-texto);
+  background-color: #fff;
+  font: inherit;
+}
+
+.newsletter .botao {
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 18. Vale-presente */
+.presente {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.presente img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* 19. Rodapé */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  border-top: 1px solid rgba(58, 47, 44, 0.2);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* 20. Ajustes responsivos das novas seções */
+@media (max-width: 900px) {
+  .posts,
+  .presente {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 21. Botão do menu (escondido no computador) */
+.menu-botao {
+  display: none;
+  padding: 0.5rem 1rem;
+  border: 1px solid currentColor;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 22. Menu em telas pequenas */
+@media (max-width: 700px) {
+  .carrinho {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .menu-botao {
+    display: block;
+    order: 3;
+  }
+
+  header nav {
+    display: none;
+    order: 4;
+    flex-basis: 100%;
+  }
+
+  header nav.aberto {
+    display: block;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+/* 23. Link da página atual no menu */
+nav a[aria-current="page"] {
+  border-bottom: 1px solid currentColor;
+}
+
+/* 24. Grade de produtos */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  margin-top: 2rem;
+}
+
+.produto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.produto h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.35rem;
+}
+
+.produto p {
+  margin: 0 0 0.5rem;
+}
+
+.preco {
+  font-weight: 600;
+}
+
+.produto .botao {
+  margin-top: 0.5rem;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* 25. Responsivo da loja */
+@media (max-width: 900px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 26. Atributo hidden sempre vence */
+[hidden] {
+  display: none !important;
+}
+
+/* 27. Carrinho */
+#carrinho-itens {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.item-carrinho {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(58, 47, 44, 0.2);
+}
+
+.item-carrinho button {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid currentColor;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.item-carrinho button:hover {
+  color: var(--cor-destaque);
+}
+
+.item-subtotal {
+  font-weight: 600;
+}
+
+.resumo {
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.total {
+  font-size: 1.5rem;
+}
+
+.resumo .botao {
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+
+.resumo .botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .item-carrinho {
+    grid-template-columns: 1fr auto;
+  }
+}
+/* 28. Página de produto */
+.produto-detalhe {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.produto-detalhe img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.produto-detalhe h1 {
+  margin-top: 0;
+}
+
+.produto-detalhe .preco {
+  font-size: 1.5rem;
+}
+
+.produto-detalhe fieldset {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border: 0;
+}
+
+.produto-detalhe legend {
+  padding: 0;
+}
+
+/* 29. Seletor de tom */
+.tons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.tom {
+  position: relative;
+  cursor: pointer;
+}
+
+.tom input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tom .cor {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.tom:hover .cor {
+  transform: scale(1.08);
+}
+
+.tom input:checked + .cor {
+  outline: 2px solid var(--cor-texto);
+  outline-offset: 3px;
+}
+
+.tom input:focus-visible + .cor {
+  outline: 2px dashed var(--cor-destaque);
+  outline-offset: 3px;
+}
+
+#adicionar {
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .produto-detalhe {
+    grid-template-columns: 1fr;
+  }
+}
+/* 30. Texto de destaque */
+.destaque {
+  max-width: 40rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+/* 31. Nossa história */
+.historia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.historia img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.historia h2 {
+  margin-top: 0;
+}
+
+.valores {
+  padding-left: 1.25rem;
+}
+/* 32. Diário: títulos h2 e "Ler mais" */
+.post h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.post summary {
+  cursor: pointer;
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+}
+
+.post details p {
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 900px) {
+  .historia {
+    grid-template-columns: 1fr;
+  }
+}
+/* 33. Formulário de contato */
+.contato-form {
+  max-width: 36rem;
+  margin-top: 2rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.contato-form input[type="text"],
+.contato-form input[type="email"],
+.contato-form select,
+.contato-form textarea {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--cor-texto);
+  background-color: #fff;
+  color: var(--cor-texto);
+  font: inherit;
+}
+
+.contato-form textarea {
+  resize: vertical;
+}
+
+.contato-form input:focus-visible,
+.contato-form select:focus-visible,
+.contato-form textarea:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.campo-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.campo-check input {
+  margin-top: 0.35rem;
+}
+
+.contato-form .botao {
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
